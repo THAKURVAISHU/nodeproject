@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400");
+*{
+  box-sizing: border-box;
+}
+html{
+  font: 16px/1.6 'Poppins', system-ui, sans-serif;
+}
+body{
+	padding: 2em 1rem;
+	text-align: center;
+}
+[type="radio"]{
+  display: none;
+}
+label{
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+[type="radio"]:checked + label{
+	background: gold;
+}
+[type="radio"]:nth-of-type(2):checked ~ .gallery .card:not(.animals),
+[type="radio"]:nth-of-type(3):checked ~ .gallery .card:not(.nature),
+[type="radio"]:nth-of-type(4):checked ~ .gallery .card:not(.people),
+[type="radio"]:nth-of-type(5):checked ~ .gallery .card:not(.tech)
+{
+  display: none;
+}
+.gallery{
+  display: grid;
+	justify-content: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.card{
+  margin: 0;
+  background: rgb(69, 62, 116);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px silver;
+  transition: box-shadow 0.35s;
+}
+.card:hover{
+  box-shadow: 0 0 25px #0009;
+}
+.card__image{
+  width: 100%;
+  object-fit: cover;
+}
+.card__caption{
+	font-weight: bold;
+  font-variant: small-caps;
+  padding: 0.5rem;
+  text-align: center;
+  color: gold;
+}
+.btn-info, .btn-info:visited, .btn-info:hover {
+    background-color:white;
+    border-color: white;
+}
+
+/* Donate layer */
+.donate{
+	position: fixed;
+	bottom: 0.25rem;
+	right: 0.25rem; 
+	border-radius: 0.5rem;
+	background-color: whitesmoke;
+	padding: 0 1rem;
+	font-weight: bold;
+	color: dimgray;
+}
+.donate a{
+	text-decoration: none;
+	color: orangered;
+	border-bottom: 2px solid transparent;
+	transition: 0.35s;
+}
+.donate a:hover{
+	border-bottom-color: orangered;
+}
